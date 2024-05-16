@@ -1,9 +1,6 @@
 # Start with a rust alpine image
 FROM rust:1-alpine3.19
 
-# This is important, see https://github.com/rust-lang/docker-rust/issues/85
-# ENV RUSTFLAGS="-C target-feature=-crt-static"
-
 # set the workdir and copy the source into it
 WORKDIR /app
 COPY ./ /app
