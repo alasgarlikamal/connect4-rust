@@ -25,9 +25,11 @@ Image Size: `8.19 MB`
 #### Running container
 
 ```docker
-docker run -i --rm -name connect4 connect4
+docker run -it --rm -name connect4 connect4
 ```
 
 `-i` : For running container in interactive mode
+
+`-t` : Allocating pseudo-TTY
 
 `--rm` : Removing container after finish
