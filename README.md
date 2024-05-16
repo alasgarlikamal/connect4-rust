@@ -20,6 +20,8 @@ target/release/connectfour
 docker build -t connect4 .
 ```
 
+Image Size: `8.19 MB`
+
 #### Running container
 
 ```docker
