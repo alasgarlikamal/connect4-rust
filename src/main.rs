@@ -73,16 +73,22 @@ impl Board {
         // Check horizontal
         let mut left = col_idx;
         let mut right = col_idx;
-
-        while compare_pieces(self.columns[left][row_idx], piece) && left > 0 {
-            left -= 1;
+        while left > 0 {
+            if compare_pieces(self.columns[left - 1][row_idx], piece) {
+                left -= 1;
+            } else {
+                break;
+            }
         }
-        while compare_pieces(self.columns[right][row_idx], piece) && right < self.columns.len() - 1
-        {
-            right += 1;
+        while right < self.columns.len() - 1 {
+            if compare_pieces(self.columns[right + 1][row_idx], piece) {
+                right += 1;
+            } else {
+                break;
+            }
         }
 
-        if right - left >= 4 {
+        if right - left >= 3 {
             return true;
         }
 
@@ -91,7 +97,7 @@ impl Board {
         let mut right = col_idx;
         while right < self.columns.len() - 1
             && top < col.len()
-            && compare_pieces(self.columns[right][top], piece)
+            && compare_pieces(self.columns[right + 1][top + 1], piece)
         {
             top += 1;
             right += 1;
@@ -99,34 +105,35 @@ impl Board {
 
         let mut bottom = row_idx;
         let mut left = col_idx;
-        while compare_pieces(self.columns[left][bottom], piece) && left > 0 && bottom > 0 {
+        while left > 0 && bottom > 0 && compare_pieces(self.columns[left - 1][bottom - 1], piece) {
             bottom -= 1;
             left -= 1;
         }
 
-        if right - left >= 4 {
+        if right - left >= 3 {
             return true;
         }
 
         // Check second diagonal
         let mut top = row_idx;
         let mut left = col_idx;
-        while left > 0 && top < col.len() && compare_pieces(self.columns[left][top], piece) {
+        while left > 0 && top < col.len() && compare_pieces(self.columns[left - 1][top + 1], piece)
+        {
             top += 1;
             left -= 1;
         }
 
         let mut bottom = row_idx;
         let mut right = col_idx;
-        while compare_pieces(self.columns[right][bottom], piece)
-            && right < self.columns.len() - 1
+        while right < self.columns.len() - 1
             && bottom > 0
+            && compare_pieces(self.columns[right + 1][bottom - 1], piece)
         {
             bottom -= 1;
             right += 1;
         }
 
-        if right - left >= 4 {
+        if right - left >= 3 {
             return true;
         }
 
