@@ -96,7 +96,7 @@ impl Board {
         let mut top = row_idx;
         let mut right = col_idx;
         while right < self.columns.len() - 1
-            && top < col.len()
+            && top < col.len() - 1
             && compare_pieces(self.columns[right + 1][top + 1], piece)
         {
             top += 1;
@@ -117,7 +117,9 @@ impl Board {
         // Check second diagonal
         let mut top = row_idx;
         let mut left = col_idx;
-        while left > 0 && top < col.len() && compare_pieces(self.columns[left - 1][top + 1], piece)
+        while left > 0
+            && top < col.len() - 1
+            && compare_pieces(self.columns[left - 1][top + 1], piece)
         {
             top += 1;
             left -= 1;
