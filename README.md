@@ -9,6 +9,7 @@ cargo run
 Or execute binary
 
 ```
+cargo build --release
 target/release/connectfour
 ```
 
