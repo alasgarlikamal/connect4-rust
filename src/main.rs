@@ -143,6 +143,7 @@ impl Board {
     }
 
     fn display(&self) {
+        print!("{esc}[2J{esc}[1;1H", esc = 27 as char); // Clear screen
         println!("____________________________________");
 
         for j in (0..6).rev() {
