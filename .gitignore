@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -27,4 +26,3 @@ dist-ssr
 .env
 =======
 /target
->>>>>>> 78346cb (Initial commit)
