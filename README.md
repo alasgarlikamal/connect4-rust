@@ -1,6 +1,5 @@
 # connect4-rust
-<img width="382" alt="Game start" src="https://github.com/alasgarlikamal/connect4-rust/assets/98516464/2ad959ef-f6a9-4472-bcc4-76010f0de9e1">
-<img width="382" alt="Game end" src="https://github.com/alasgarlikamal/connect4-rust/assets/98516464/6e2c0e58-c667-4395-a7b2-414af358210a">
+<img width="546" alt="Screenshot 2024-12-29 at 11 40 54" src="https://github.com/user-attachments/assets/bac28677-0b03-4dbc-aa96-88a809799cfd" />
 
 
 Run with `cargo`
