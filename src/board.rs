@@ -165,19 +165,59 @@ impl Board {
             }
         }
         println!("");
-        println!("╠══╬══╬══╬══╬══╬══╬══╣");
+        println!("");
+
+        // Board
         for j in (0..6).rev() {
             for i in 0..self.columns.len() {
-                print!("║");
+                if i == self.curr || i == self.curr + 1 {
+                    print!("{}", "║".green());
+                } else {
+                    print!("║");
+                }
                 match self.columns[i][j] {
                     Piece::Red => print!("🔴"),
                     Piece::Yellow => print!("🟡"),
                     _ => print!("  "),
                 }
             }
-            println!("║")
+            if self.curr + 1 == self.columns.len() {
+                println!("{}", "║".green())
+            } else {
+                println!("║")
+            }
         }
-        println!("╚══╩══╩══╩══╩══╩══╩══╝");
+
+        //Board bottom side
+        if self.curr == 0 {
+            print!("{}", "╚".green())
+        } else {
+            print!("╚")
+        }
+
+        for i in 0..self.columns.len() {
+            if i == self.curr {
+                print!("{}", "══".green());
+            } else {
+                print!("══");
+            }
+
+            if i == self.columns.len() - 1 {
+                if i == self.curr {
+                    print!("{}", "╝".green())
+                } else {
+                    print!("╝")
+                }
+            } else {
+                if i == self.curr || i + 1 == self.curr {
+                    print!("{}", "╩".green());
+                } else {
+                    print!("╩")
+                }
+            }
+        }
+
+        println!("")
     }
 
     pub fn go_right(&mut self) {
