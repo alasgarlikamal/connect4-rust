@@ -5,14 +5,14 @@
 Run with `cargo`
 
 ```bash
-$ cargo run
+cargo run
 ```
 
 Or execute binary
 
 ```bash
 # Build
-$ cargo build --release
+cargo build --release
 
 # Run
 target/release/connectfour
