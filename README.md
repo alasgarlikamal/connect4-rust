@@ -1,16 +1,19 @@
 # connect4-rust
-<img width="546" alt="Screenshot 2024-12-29 at 11 40 54" src="https://github.com/user-attachments/assets/bac28677-0b03-4dbc-aa96-88a809799cfd" />
+<img width="536" alt="Screenshot 2024-12-29 at 15 09 40" src="https://github.com/user-attachments/assets/8975b879-31cc-4af0-8025-99eaa2b7b2bc" />
 
-
+## How to play
 Run with `cargo`
 
-```
-cargo run
+```bash
+$ cargo run
 ```
 
 Or execute binary
 
-```
-cargo build --release
+```bash
+# Build
+$ cargo build --release
+
+# Run
 target/release/connectfour
 ```
