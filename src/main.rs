@@ -2,8 +2,8 @@ use colored::Colorize;
 use getch_rs::{Getch, Key};
 mod board;
 mod piece;
-pub use board::Board;
-pub use piece::Piece;
+use board::Board;
+use piece::Piece;
 
 fn main() {
     let mut board = Board::new();

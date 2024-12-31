@@ -1,4 +1,4 @@
-pub use crate::piece::Piece;
+use crate::piece::Piece;
 use colored::Colorize;
 
 #[derive(Debug)]
