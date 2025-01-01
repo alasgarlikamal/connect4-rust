@@ -1,9 +1,7 @@
 use colored::Colorize;
+use connectfour::board::Board;
+use connectfour::piece::Piece;
 use getch_rs::{Getch, Key};
-mod board;
-mod piece;
-use board::Board;
-use piece::Piece;
 
 fn main() {
     let mut board = Board::new();
